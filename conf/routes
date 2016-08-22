@@ -3,5 +3,5 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.getWordCount
-GET     /events                           controllers.HomeController.getEventsCount
+GET     /                           controllers.TwitterController.getWordCount
+GET     /events                           controllers.TwitterController.getEventsCount

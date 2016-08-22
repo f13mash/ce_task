@@ -35,7 +35,7 @@ public class TwitterService {
     private static final String ACCESS_TOKEN = "stream.access.token";
     private static final String ACCESS_SECRET = "stream.access.secret";
     private static final Pattern pattern = Pattern.compile("\\w+");
-    private static final String BLACKLIST_FILE = "conf/twitter_stream_blacklisted.csv";
+    private static final String BLACKLIST_FILE = "conf/twitter_stream_blacklisted";
     private static final Set<String> blacklistedWords = new HashSet<>();
     private static RedisService redisService;
     private final Configuration conf;

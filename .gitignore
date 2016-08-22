@@ -5,4 +5,5 @@ target
 /.classpath
 /.project
 /.settings
+*.swp
 /RUNNING_PID
