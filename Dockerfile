@@ -16,6 +16,5 @@ RUN mv activator-1.3.2-minimal activator
 RUN ln -s /opt/activator/activator /usr/local/sbin/activator
 
 WORKDIR /app
-RUN activator compile
 ENTRYPOINT ["/app/script.sh"]
 
