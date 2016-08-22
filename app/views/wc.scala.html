@@ -1,0 +1,35 @@
+@*
+ * This template is called from the `index` template. This template
+ * handles the rendering of the page header and body tags. It takes
+ * two arguments, a `String` for the title of the page and an `Html`
+ * object to insert into the body of the page.
+ *@
+@(list: List[services.twitter.Word])(header: String)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <h2>@header</h2>
+    </head>
+    <body>
+        <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+        .tg .tg-yw4l{vertical-align:top}
+        </style>
+        <table class="tg">
+            <tr>
+                <th class="tg-031e">Word</th>
+                <th class="tg-yw4l">Count</th>
+            </tr>
+            @for(index <- 0 until list.size){
+                <tr>
+                    <td>@list(index).getWord</td>
+                    <td>@list(index).getCount</td>
+                </tr>
+            }
+        </table>
+
+    </body>
+</html>
