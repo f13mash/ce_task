@@ -2,4 +2,20 @@ This Application is derived from boilerplate for java provided by Play Framework
 
 Application uses redis as datastore
 
+1. conf/routes defines the routes and their handlers. Only one Controller(app/controllers.TwitterController) is in use. View are present in the view folder(app/views/wc.scala.html)
 
+2. Twitter4J is used for streaming from Twitter and currently coupled as part of the Play application itself. For the sake of simplicity it has been kept as part of the Play application.
+
+3. app/services.TwitterService instantiates the twitter handlers for public stream and user stream(configured user)
+
+4. conf/application.conf holds the configuration values for redis and twitter creds. Twitter creds(setup for test account) are stored in code currently, which wont be the case in production environment.
+
+5. The application listed to both public status message streams and user event stream. For listening on two streams, Twitter4J has to be configured with the different access token and secret.
+
+6. app/services.RedisService provides a wrapper over Jedis exposing only the methods required.
+
+7. Public Stream messages are handled by app.services.twitter.TwitterPublicStreamHandler
+
+8. User Events are handled by app.services.twitter.TwitterUserStreamHandler
+
+9. conf/twitter_stream_blacklisted contains text with words to be ignored. Words are parsed from this file and excluded from getting recorded.
